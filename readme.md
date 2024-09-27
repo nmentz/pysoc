@@ -24,7 +24,7 @@ The virtual environment has been created, you can now enter it with ```./venv/Sc
 ```sh
 pip3 cache purge
 pip3 install build setuptools wheel
-python -m build
+python -m build --verbose
 ```
 Now under ```pysoc/dist/```, there will be a file with a ```.whl``` extension. Replace ```build_name``` with the name of this file.
 ```sh
@@ -36,6 +36,5 @@ pip3 show pysoc
 ```
 ## Examples
 ```sh
-cd pysoc/examples
-python ./tcp_packet.py
+python ./pysoc/examples/tcp_packet.py
 ```
