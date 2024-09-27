@@ -8,6 +8,9 @@ version = "1.0"
 description = "pysoc - streamline packet building in pysoc"
 authors = [{ name = "Nathan Mentze", email = "natementze@gmail.com" }]
 
+[project.license]
+text = "The Unlicense"
+
 [project.optional-dependencies]
 dev = [
     "pytest",
