@@ -46,14 +46,12 @@ static PyObject* tcpSock4 (PyObject* self, PyObject* args) {
     const char* address;
     int port;
 
-    if (!PyArg_ParseTuple(args, "si", &address, &port)) {
+    if (!PyArg_ParseTuple(args, "si", &address, &port))
         return NULL;
-    }
 
     WSADATA wsaData;
-    if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
+    if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
         return PyErr_SetFromWindowsErr(WSAGetLastError());
-    }
 
     SOCKET sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if (sock == INVALID_SOCKET) {
