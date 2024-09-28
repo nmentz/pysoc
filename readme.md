@@ -34,7 +34,10 @@ Verify the installation of pysoc within your venv.
 ```sh
 pip3 show pysoc
 ```
+
 ## Examples
+Here is a basic usage guide. It is recommended that you send packets to your own servers.
 ```sh
-python ./pysoc/examples/tcp_packet.py
+python ./examples/tcp4.py
 ```
+On Windows you can run ```netstat -an | findstr :<port number>``` to see active connections.
