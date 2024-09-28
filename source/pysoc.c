@@ -84,19 +84,15 @@ static PyObject* tcpSock6 (PyObject* self) {
 #endif
 }
 
-/*
-static PyObject* close_socket (PyObject* self, PyObject* args) {
+static PyObject* kill_socket (PyObject* self, PyObject* args) {
 #ifdef _WIN32
     unsigned long sock;
 
-    if (!PyArg_ParseTuple(args, "k", &sock)) {
+    if (!PyArg_ParseTuple(args, "k", &sock))
         return NULL;
-    }
 
-    if (closesocket((SOCKET)sock) == SOCKET_ERROR) {
-        printf("alright it closed\n\n");
+    if (closesocket((SOCKET)sock) == SOCKET_ERROR)
         return PyErr_SetFromWindowsErr(WSAGetLastError());
-    }
 
     WSACleanup();
 #else
@@ -104,14 +100,13 @@ static PyObject* close_socket (PyObject* self, PyObject* args) {
 #endif
     Py_RETURN_NONE;
 }
-*/
 
 ////////////////// end methods ////////////////////
 
 static PyMethodDef pysocMethods[] = {
     {"tcpSock4", (PyCFunction)tcpSock4, METH_VARARGS, "Create an IPv4 TCP socket."},
     {"tcpSock6", (PyCFunction)tcpSock6, METH_NOARGS, "Create an IPv6 TCP socket."},
-    //{"tcpSock4", (PyCFunction)close_socket, METH_VARARGS, "Close socket."},
+    {"kill_socket", (PyCFunction)kill_socket, METH_VARARGS, "Close socket."},
     {NULL, NULL, 0, NULL}
 };
 
