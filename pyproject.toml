@@ -13,5 +13,5 @@ text = "The Unlicense"
 
 [project.optional-dependencies]
 dev = [
-    "pytest",
+    "pytest"
 ]
